@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825C52B2DCBEF2300FB653B /* WelcomeView.swift */; };
+		1855383F2DCA719600DDE774 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855383E2DCA719600DDE774 /* InputView.swift */; };
+		18F2FA992DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA952DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf */; };
+		18F2FA9A2DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA942DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf */; };
+		18F2FA9B2DC94A6F0052A4ED /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA962DC94A6F0052A4ED /* OFL.txt */; };
+		18F2FA9C2DC94A6F0052A4ED /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8F2DC94A6F0052A4ED /* Nunito-MediumItalic.ttf */; };
+		18F2FA9D2DC94A6F0052A4ED /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA912DC94A6F0052A4ED /* Nunito-SemiBold.ttf */; };
+		18F2FA9E2DC94A6F0052A4ED /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8A2DC94A6F0052A4ED /* Nunito-ExtraLightItalic.ttf */; };
+		18F2FA9F2DC94A6F0052A4ED /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8D2DC94A6F0052A4ED /* Nunito-LightItalic.ttf */; };
+		18F2FAA02DC94A6F0052A4ED /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA882DC94A6F0052A4ED /* Nunito-ExtraBoldItalic.ttf */; };
+		18F2FAA12DC94A6F0052A4ED /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA972DC94A6F0052A4ED /* README.txt */; };
+		18F2FAA22DC94A6F0052A4ED /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8C2DC94A6F0052A4ED /* Nunito-Light.ttf */; };
+		18F2FAA32DC94A6F0052A4ED /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA842DC94A6F0052A4ED /* Nunito-BlackItalic.ttf */; };
+		18F2FAA42DC94A6F0052A4ED /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA902DC94A6F0052A4ED /* Nunito-Regular.ttf */; };
+		18F2FAA52DC94A6F0052A4ED /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8E2DC94A6F0052A4ED /* Nunito-Medium.ttf */; };
+		18F2FAA62DC94A6F0052A4ED /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA8B2DC94A6F0052A4ED /* Nunito-Italic.ttf */; };
+		18F2FAA72DC94A6F0052A4ED /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA862DC94A6F0052A4ED /* Nunito-BoldItalic.ttf */; };
+		18F2FAA82DC94A6F0052A4ED /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA892DC94A6F0052A4ED /* Nunito-ExtraLight.ttf */; };
+		18F2FAA92DC94A6F0052A4ED /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA872DC94A6F0052A4ED /* Nunito-ExtraBold.ttf */; };
+		18F2FAAA2DC94A6F0052A4ED /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA922DC94A6F0052A4ED /* Nunito-SemiBoldItalic.ttf */; };
+		18F2FAAB2DC94A6F0052A4ED /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA832DC94A6F0052A4ED /* Nunito-Black.ttf */; };
+		18F2FAAC2DC94A6F0052A4ED /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA852DC94A6F0052A4ED /* Nunito-Bold.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1825C52B2DCBEF2300FB653B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1855383E2DCA719600DDE774 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		18F2FA692DC931380052A4ED /* Dinero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F2FA832DC94A6F0052A4ED /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		18F2FA842DC94A6F0052A4ED /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA852DC94A6F0052A4ED /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		18F2FA862DC94A6F0052A4ED /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA872DC94A6F0052A4ED /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		18F2FA882DC94A6F0052A4ED /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA892DC94A6F0052A4ED /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		18F2FA8A2DC94A6F0052A4ED /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA8B2DC94A6F0052A4ED /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		18F2FA8C2DC94A6F0052A4ED /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		18F2FA8D2DC94A6F0052A4ED /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA8E2DC94A6F0052A4ED /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		18F2FA8F2DC94A6F0052A4ED /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA902DC94A6F0052A4ED /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		18F2FA912DC94A6F0052A4ED /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		18F2FA922DC94A6F0052A4ED /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		18F2FA942DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		18F2FA952DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		18F2FA962DC94A6F0052A4ED /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		18F2FA972DC94A6F0052A4ED /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18F2FAAE2DC94ADD0052A4ED /* Exceptions for "Dinero" folder in "Dinero" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 18F2FA682DC931380052A4ED /* Dinero */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		18F2FA6B2DC931380052A4ED /* Dinero */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18F2FAAE2DC94ADD0052A4ED /* Exceptions for "Dinero" folder in "Dinero" target */,
+			);
+			path = Dinero;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18F2FA662DC931380052A4ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18F2FA602DC931380052A4ED = {
+			isa = PBXGroup;
+			children = (
+				18F2FA822DC949F80052A4ED /* Resources */,
+				18F2FA7C2DC935860052A4ED /* ViewModels */,
+				18F2FA7B2DC935740052A4ED /* Models  */,
+				18F2FA7A2DC9346B0052A4ED /* View */,
+				18F2FA6B2DC931380052A4ED /* Dinero */,
+				18F2FA6A2DC931380052A4ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18F2FA6A2DC931380052A4ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18F2FA692DC931380052A4ED /* Dinero.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18F2FA7A2DC9346B0052A4ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18F2FA7F2DC93E990052A4ED /* Components */,
+				1825C52B2DCBEF2300FB653B /* WelcomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18F2FA7B2DC935740052A4ED /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		18F2FA7C2DC935860052A4ED /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		18F2FA7F2DC93E990052A4ED /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1855383E2DCA719600DDE774 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		18F2FA822DC949F80052A4ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18F2FA982DC94A6F0052A4ED /* Nunito Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18F2FA932DC94A6F0052A4ED /* static */ = {
+			isa = PBXGroup;
+			children = (
+				18F2FA832DC94A6F0052A4ED /* Nunito-Black.ttf */,
+				18F2FA842DC94A6F0052A4ED /* Nunito-BlackItalic.ttf */,
+				18F2FA852DC94A6F0052A4ED /* Nunito-Bold.ttf */,
+				18F2FA862DC94A6F0052A4ED /* Nunito-BoldItalic.ttf */,
+				18F2FA872DC94A6F0052A4ED /* Nunito-ExtraBold.ttf */,
+				18F2FA882DC94A6F0052A4ED /* Nunito-ExtraBoldItalic.ttf */,
+				18F2FA892DC94A6F0052A4ED /* Nunito-ExtraLight.ttf */,
+				18F2FA8A2DC94A6F0052A4ED /* Nunito-ExtraLightItalic.ttf */,
+				18F2FA8B2DC94A6F0052A4ED /* Nunito-Italic.ttf */,
+				18F2FA8C2DC94A6F0052A4ED /* Nunito-Light.ttf */,
+				18F2FA8D2DC94A6F0052A4ED /* Nunito-LightItalic.ttf */,
+				18F2FA8E2DC94A6F0052A4ED /* Nunito-Medium.ttf */,
+				18F2FA8F2DC94A6F0052A4ED /* Nunito-MediumItalic.ttf */,
+				18F2FA902DC94A6F0052A4ED /* Nunito-Regular.ttf */,
+				18F2FA912DC94A6F0052A4ED /* Nunito-SemiBold.ttf */,
+				18F2FA922DC94A6F0052A4ED /* Nunito-SemiBoldItalic.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		18F2FA982DC94A6F0052A4ED /* Nunito Font */ = {
+			isa = PBXGroup;
+			children = (
+				18F2FA932DC94A6F0052A4ED /* static */,
+				18F2FA942DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf */,
+				18F2FA952DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf */,
+				18F2FA962DC94A6F0052A4ED /* OFL.txt */,
+				18F2FA972DC94A6F0052A4ED /* README.txt */,
+			);
+			path = "Nunito Font";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18F2FA682DC931380052A4ED /* Dinero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18F2FA772DC9313A0052A4ED /* Build configuration list for PBXNativeTarget "Dinero" */;
+			buildPhases = (
+				18F2FA652DC931380052A4ED /* Sources */,
+				18F2FA662DC931380052A4ED /* Frameworks */,
+				18F2FA672DC931380052A4ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				18F2FA6B2DC931380052A4ED /* Dinero */,
+			);
+			name = Dinero;
+			packageProductDependencies = (
+			);
+			productName = Dinero;
+			productReference = 18F2FA692DC931380052A4ED /* Dinero.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18F2FA612DC931380052A4ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					18F2FA682DC931380052A4ED = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 18F2FA642DC931380052A4ED /* Build configuration list for PBXProject "Dinero" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18F2FA602DC931380052A4ED;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 18F2FA6A2DC931380052A4ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18F2FA682DC931380052A4ED /* Dinero */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18F2FA672DC931380052A4ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F2FA992DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf in Resources */,
+				18F2FA9A2DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf in Resources */,
+				18F2FA9B2DC94A6F0052A4ED /* OFL.txt in Resources */,
+				18F2FA9C2DC94A6F0052A4ED /* Nunito-MediumItalic.ttf in Resources */,
+				18F2FA9D2DC94A6F0052A4ED /* Nunito-SemiBold.ttf in Resources */,
+				18F2FA9E2DC94A6F0052A4ED /* Nunito-ExtraLightItalic.ttf in Resources */,
+				18F2FA9F2DC94A6F0052A4ED /* Nunito-LightItalic.ttf in Resources */,
+				18F2FAA02DC94A6F0052A4ED /* Nunito-ExtraBoldItalic.ttf in Resources */,
+				18F2FAA12DC94A6F0052A4ED /* README.txt in Resources */,
+				18F2FAA22DC94A6F0052A4ED /* Nunito-Light.ttf in Resources */,
+				18F2FAA32DC94A6F0052A4ED /* Nunito-BlackItalic.ttf in Resources */,
+				18F2FAA42DC94A6F0052A4ED /* Nunito-Regular.ttf in Resources */,
+				18F2FAA52DC94A6F0052A4ED /* Nunito-Medium.ttf in Resources */,
+				18F2FAA62DC94A6F0052A4ED /* Nunito-Italic.ttf in Resources */,
+				18F2FAA72DC94A6F0052A4ED /* Nunito-BoldItalic.ttf in Resources */,
+				18F2FAA82DC94A6F0052A4ED /* Nunito-ExtraLight.ttf in Resources */,
+				18F2FAA92DC94A6F0052A4ED /* Nunito-ExtraBold.ttf in Resources */,
+				18F2FAAA2DC94A6F0052A4ED /* Nunito-SemiBoldItalic.ttf in Resources */,
+				18F2FAAB2DC94A6F0052A4ED /* Nunito-Black.ttf in Resources */,
+				18F2FAAC2DC94A6F0052A4ED /* Nunito-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18F2FA652DC931380052A4ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1855383F2DCA719600DDE774 /* InputView.swift in Sources */,
+				1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		18F2FA752DC9313A0052A4ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18F2FA762DC9313A0052A4ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18F2FA782DC9313A0052A4ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dinero/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Y2S5682AR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dinero/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KauaVinicius.Dinero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18F2FA792DC9313A0052A4ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dinero/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Y2S5682AR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dinero/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KauaVinicius.Dinero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18F2FA642DC931380052A4ED /* Build configuration list for PBXProject "Dinero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18F2FA752DC9313A0052A4ED /* Debug */,
+				18F2FA762DC9313A0052A4ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18F2FA772DC9313A0052A4ED /* Build configuration list for PBXNativeTarget "Dinero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18F2FA782DC9313A0052A4ED /* Debug */,
+				18F2FA792DC9313A0052A4ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18F2FA612DC931380052A4ED /* Project object */;
+}
