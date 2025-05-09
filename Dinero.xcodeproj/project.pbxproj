@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18254FFA2DCDE4E700C18865 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */; };
 		1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825C52B2DCBEF2300FB653B /* WelcomeView.swift */; };
 		1855383F2DCA719600DDE774 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855383E2DCA719600DDE774 /* InputView.swift */; };
+		18D81C842DCD8F0F005DC9EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81C832DCD8F0F005DC9EF /* HomeView.swift */; };
+		18F0BDA12DCD2E840056EEC8 /* LocalAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */; };
 		18F2FA992DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA952DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf */; };
 		18F2FA9A2DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA942DC94A6F0052A4ED /* Nunito-Italic-VariableFont_wght.ttf */; };
 		18F2FA9B2DC94A6F0052A4ED /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA962DC94A6F0052A4ED /* OFL.txt */; };
@@ -32,8 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = SOURCE_ROOT; };
 		1825C52B2DCBEF2300FB653B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1855383E2DCA719600DDE774 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		18D81C832DCD8F0F005DC9EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthView.swift; sourceTree = "<group>"; };
 		18F2FA692DC931380052A4ED /* Dinero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F2FA832DC94A6F0052A4ED /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		18F2FA842DC94A6F0052A4ED /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 			children = (
 				18F2FA7F2DC93E990052A4ED /* Components */,
 				1825C52B2DCBEF2300FB653B /* WelcomeView.swift */,
+				18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */,
+				18D81C832DCD8F0F005DC9EF /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 		18F2FA7C2DC935860052A4ED /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,6 +288,9 @@
 			files = (
 				1855383F2DCA719600DDE774 /* InputView.swift in Sources */,
 				1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */,
+				18254FFA2DCDE4E700C18865 /* AuthenticationManager.swift in Sources */,
+				18D81C842DCD8F0F005DC9EF /* HomeView.swift in Sources */,
+				18F0BDA12DCD2E840056EEC8 /* LocalAuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +428,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dinero/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "we need face id to unlock data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,6 +459,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dinero/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "we need face id to unlock data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
