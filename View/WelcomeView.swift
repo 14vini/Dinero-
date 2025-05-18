@@ -16,12 +16,13 @@ struct WelcomeView: View {
         NavigationStack{
             
             ZStack{
-                Color(.mainBackground)
+                Color.background
                     .ignoresSafeArea(edges: .all)
                 
                 VStack{
                     VStack{
                         VStack{
+                            
                             Image("logo")
                                 .padding(.bottom)
                             
@@ -39,31 +40,19 @@ struct WelcomeView: View {
                         
                         Spacer()
                         // app features
+                        
                         VStack(alignment: .leading, spacing: 30) {
-                            
                             CardStyle(icon: "sparkles", title: "Simples de usar", description: "Adicione transações de forma fácil.")
                             CardStyle(icon: "square.stack.3d.up.fill", title: "Organização", description: "Gerencie seu dinheiro com uma interface clara e organizada.")
-                            CardStyle(icon: "faceid", title: "Segurança", description: "Seus dados ficam salvo no Iphone com face ID.")
-                                
-                        }.padding(30
-                        )
+                            CardStyle(icon: "faceid", title: "Segurança", description: "Seus dados ficam salvos no iPhone com Face ID.")
+                        }.padding(10)
+                        
                         
                         Spacer()
+                        
                         //button
                         VStack{
-                            NavigationLink(destination: LocalAuthView() ) {
-                                Text("Continuar")
-                                    .foregroundColor(.primary)
-                                    .font(.headline)
-                                    .frame(width: 300, height: 50)
-                                    .background(Color(colorScheme == .dark ? .gray.opacity(0.1) : .white.opacity(0.5)))
-                                    .cornerRadius(20)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color.primary.opacity(0.2), lineWidth: 2)
-                                    ).padding(.bottom, 30)
-                                
-                            }
+                            ButtonStyle(title: "Continuar")
                         }
                     }
                 }.padding(.horizontal)
@@ -78,17 +67,44 @@ struct WelcomeView: View {
         
         var body : some View{
             
-            HStack{
+            HStack(alignment: .top, spacing: 16) {
                 Image(systemName: icon)
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundColor(.primary)
                 
-                VStack(alignment: .leading, spacing: 4){
+                VStack(alignment: .leading, spacing: 4) {
                     Text(title)
+                        .font(.headline)
                         .fontWeight(.semibold)
                     Text(description)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
+                }
+            }
+        }
+    }
+    
+    struct ButtonStyle: View{
+        
+        var title: String
+        
+        @Environment(\.colorScheme) var colorScheme
+        
+        var body : some View{
+            
+            VStack{
+                NavigationLink(destination: LocalAuthView() ) {
+                    Text(title)
+                        .foregroundColor(.primary)
+                        .font(.headline)
+                        .frame(width: 300, height: 50)
+                        .background(Color(colorScheme == .dark ? .gray.opacity(0.1) : .white.opacity(0.5)))
+                        .cornerRadius(20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.primary.opacity(0.2), lineWidth: 2)
+                        ).padding(.bottom, 30)
+                    
                 }
                 
             }

@@ -14,7 +14,7 @@ struct LocalAuthView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(.mainBackground)
+                Color.mainBackground
                     .ignoresSafeArea()
 
                 VStack {
