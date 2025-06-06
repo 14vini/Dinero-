@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel = HomeViewModel()
+    @State var showSettings = false
     
     var body: some View {
         NavigationStack {
@@ -22,13 +23,6 @@ struct HomeView: View {
                         
                         // STATUS CARD
                         StatusCard()
-                        
-                        HStack {
-                            Image(systemName: "sparkles")
-                            Text("Calma aí, o mês ainda não acabou!")
-                                .font(.footnote)
-                        }
-                        .foregroundColor(.gray)
                         
                         // BANK CARD
                         VStack(alignment: .leading, spacing: 10) {
@@ -65,16 +59,21 @@ struct HomeView: View {
             .navigationTitle("Início")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: SettingView() ) {
+                    Button(action: {
+                        showSettings.toggle()
+                    }) {
                         ToolbarButton(icon: "gearshape")
                     }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddView() ) {
+                    NavigationLink(destination: AddView(viewModel: viewModel)) {
                         ToolbarButton(icon: "plus.circle")
                     }
                 }
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingView()
             }
         }
         .navigationBarBackButtonHidden()
@@ -82,13 +81,11 @@ struct HomeView: View {
 }
 
 struct StatusCard: View {
-  
     @Environment(\.colorScheme) var colorScheme
-    var body: some View{
-        
+    var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                VStack{
+                VStack {
                     Image(systemName: "banknote")
                         .foregroundColor(.red)
                         .font(.largeTitle)
@@ -127,19 +124,18 @@ struct StatusCard: View {
             .padding(.top)
         }
         .padding(30)
-        .background(Color(colorScheme == .dark ? .gray.opacity(0.05) : .white.opacity(0.5)))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.primary.opacity(0.1), lineWidth: 2)
         )
         
     }
-    
 }
 
 struct ToolbarButton: View {
-    var icon : String
+    var icon: String
     
     var body: some View {
         Image(systemName: icon)
@@ -150,32 +146,30 @@ struct ToolbarButton: View {
     }
 }
 
-struct BankCard: View{
+struct BankCard: View {
     @Environment(\.colorScheme) var colorScheme
-    
-    var banco : String
+    var banco: String
     
     var body: some View {
-        
-        VStack{
-            
+        VStack {
             HStack {
+                Image(systemName: "creditcard.fill")
+                    .foregroundColor(.cyan)
+
                 Text(banco)
                     .padding()
                 Spacer()
             }
             .padding(.horizontal)
-            .background(Color(colorScheme == .dark ? .gray.opacity(0.05) : .white.opacity(0.5)))
+            .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 2)
             )
-            
         }
     }
 }
-
 
 #Preview {
     HomeView()

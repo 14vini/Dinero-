@@ -96,17 +96,14 @@ struct WelcomeView: View {
                 NavigationLink(destination: LocalAuthView() ) {
                     Text(title)
                         .foregroundColor(.primary)
-                        .font(.headline)
                         .frame(width: 300, height: 50)
-                        .background(Color(colorScheme == .dark ? .gray.opacity(0.1) : .white.opacity(0.5)))
+                        .background(.ultraThinMaterial)
                         .cornerRadius(20)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.primary.opacity(0.2), lineWidth: 2)
+                                .stroke(Color.primary.opacity(0.5), lineWidth: 2)
                         ).padding(.bottom, 30)
-                    
-                }
-                
+                }   
             }
         }
     }

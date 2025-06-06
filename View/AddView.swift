@@ -4,12 +4,13 @@
 //
 //  Created by Vinicius on 5/16/25.
 //
-
 import SwiftUI
 
 struct AddView: View {
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel: HomeViewModel
     
+    // Estados do formulário
     @State private var description: String = ""
     @State private var amount: String = ""
     @State private var transactionType: TransactionType = .expense
@@ -18,40 +19,14 @@ struct AddView: View {
     @State private var paymentMethod: PaymentMethod = .cash
     @State private var linkedBank: Bank = .itau
     
+    // Estados para adicionar novo banco
     @State private var showingAddBankSheet = false
     @State private var newBankName = ""
     @State private var customBanks: [Bank] = []
     
-    enum TransactionType: String, CaseIterable {
-        case expense = "Despesa"
-        case income = "Receita"
-    }
-    
-    enum TransactionCategory: String, CaseIterable {
-        case food = "Alimentação"
-        case transport = "Transporte"
-        case housing = "Moradia"
-        case entertainment = "Lazer"
-        case health = "Saúde"
-        case other = "Outros"
-    }
-    
-    enum PaymentMethod: String, CaseIterable {
-        case cash = "Dinheiro"
-        case creditCard = "Cartão de Crédito"
-        case debitCard = "Cartão de Débito"
-        case transfer = "Transferência"
-    }
-    
-    enum Bank: String, CaseIterable, Identifiable {
-        case itau = "Itaú"
-        case bradesco = "Bradesco"
-        case santander = "Santander"
-        case nubank = "Nubank"
-        case other = "Outro"
-        
-        var id: String { self.rawValue }
-    }
+    // Validação
+    @State private var showingError = false
+    @State private var errorMessage = ""
     
     var allBanks: [Bank] {
         Bank.allCases.filter { $0 != .other } + customBanks
@@ -59,17 +34,22 @@ struct AddView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack{
+            ZStack {
                 Color.mainBackground
-                    .ignoresSafeArea(edges: .all)
+                    .ignoresSafeArea()
+                
                 Form {
-                    Section(header: Text("INFORMAÇÃO BÁSICA")) {
+                    Section(header: Text("INFORMAÇÃO BÁSICA").font(.headline)) {
                         TextField("Descrição", text: $description)
+                            .autocapitalization(.sentences)
                         
                         HStack {
                             Text("R$")
                             TextField("0,00", text: $amount)
                                 .keyboardType(.decimalPad)
+                                .onChange(of: amount) { newValue in
+                                    validateAmount(newValue)
+                                }
                         }
                         
                         Picker("Tipo", selection: $transactionType) {
@@ -77,6 +57,7 @@ struct AddView: View {
                                 Text(type.rawValue).tag(type)
                             }
                         }
+                        .pickerStyle(SegmentedPickerStyle())
                         
                         Picker("Categoria", selection: $category) {
                             ForEach(TransactionCategory.allCases, id: \.self) { cat in
@@ -85,21 +66,6 @@ struct AddView: View {
                         }
                         
                         DatePicker("Data", selection: $selectedDate, displayedComponents: .date)
-                            .datePickerStyle(GraphicalDatePickerStyle())
-                    }
-                    
-                    Section(header: Text("INFORMAÇÃO ADICIONAL")) {
-                        Picker("Método de pagamento", selection: $paymentMethod) {
-                            ForEach(PaymentMethod.allCases, id: \.self) { method in
-                                Text(method.rawValue).tag(method)
-                            }
-                        }
-                        
-                        Picker("Banco vinculado", selection: $linkedBank) {
-                            ForEach(Bank.allCases, id: \.self) { bank in
-                                Text(bank.rawValue).tag(bank)
-                            }
-                        }
                     }
                     
                     Section(header: Text("INFORMAÇÃO ADICIONAL").font(.headline)) {
@@ -121,41 +87,119 @@ struct AddView: View {
                         }
                     }
                 }
-                .scrollContentBackground(.hidden) 
+                .scrollContentBackground(.hidden)
                 .navigationTitle("Nova transação")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Adicionar") {
-                            // ação de adicionar a transação
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancelar") {
+                            dismiss()
                         }
-                        .frame(width: 100, height: 40)
-                        .foregroundColor(.primary)
-                        .background(Color(colorScheme == .dark ? .gray.opacity(0.1) : .white.opacity(0.5)))
-                        .cornerRadius(20)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.primary.opacity(0.2), lineWidth: 2)
-                        )
-                        
                     }
+                    
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Salvar") {
+                            saveTransaction()
+                        }
+                        .disabled(!isFormValid)
+                    }
+                }
+                .alert("Erro", isPresented: $showingError) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(errorMessage)
+                }
+                .sheet(isPresented: $showingAddBankSheet) {
+                    addNewBankView
                 }
             }
         }
     }
-        
-        private func saveTransaction() {
-            // Implemente a lógica para salvar a transação aqui
-            print("Transação salva:")
-            print("Descrição: \(description)")
-            print("Valor: \(amount)")
-            print("Tipo: \(transactionType.rawValue)")
-            print("Categoria: \(category.rawValue)")
-            print("Data: \(selectedDate)")
-            print("Método de pagamento: \(paymentMethod.rawValue)")
-            print("Banco: \(linkedBank.rawValue)")
+    
+    // MARK: - View Components
+    private var addNewBankView: some View {
+        NavigationStack {
+            Form {
+                TextField("Nome do banco", text: $newBankName)
+                    .autocapitalization(.words)
+            }
+            .navigationTitle("Novo Banco")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancelar") {
+                        newBankName = ""
+                        showingAddBankSheet = false
+                    }
+                }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Adicionar") {
+                        addCustomBank()
+                    }
+                    .disabled(newBankName.isEmpty)
+                }
+            }
+        }
+        .presentationDetents([.medium])
+    }
+    
+    // MARK: - Validação
+    private var isFormValid: Bool {
+        !description.isEmpty && !amount.isEmpty && Double(amount) != nil
+    }
+    
+    private func validateAmount(_ value: String) {
+        if value.contains(",") {
+            amount = value.replacingOccurrences(of: ",", with: ".")
         }
     }
+    
+    // MARK: - Ações
+    private func addCustomBank() {
+        let customBank = Bank.custom(newBankName)
+        customBanks.append(customBank)
+        linkedBank = customBank
+        newBankName = ""
+        showingAddBankSheet = false
+    }
+    
+    private func saveTransaction() {
+        guard let amountValue = Double(amount) else {
+            errorMessage = "Valor inválido. Use números decimais (ex: 150.50)"
+            showingError = true
+            return
+        }
+        
+        guard !description.isEmpty else {
+            errorMessage = "Por favor, insira uma descrição"
+            showingError = true
+            return
+        }
+        
+        let newTransaction = Transaction(
+            description: description,
+            amount: amountValue,
+            type: transactionType,
+            category: category,
+            date: selectedDate,
+            paymentMethod: paymentMethod,
+            bank: linkedBank
+        )
+        
+        viewModel.addTransaction(newTransaction)
+        dismiss()
+    }
+}
 
+// Extensão para bancos customizados
+extension Bank {
+    static func custom(_ name: String) -> Bank {
+        Bank(rawValue: name) ?? .other
+    }
+}
+
+// Preview
 #Preview {
-    AddView()
+    AddView(viewModel: HomeViewModel())
+        .environment(\.locale, Locale(identifier: "pt_BR"))
 }

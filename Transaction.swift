@@ -1,0 +1,99 @@
+//
+//  Transaction.swift
+//  Dinero
+//
+//  Created by Vinicius on 5/20/25.
+//
+
+import Foundation
+
+struct Transaction: Identifiable, Codable, Hashable {
+    let id: UUID
+    let description: String
+    let amount: Double
+    let type: TransactionType
+    let category: TransactionCategory
+    let date: Date
+    let paymentMethod: PaymentMethod
+    let bank: Bank
+    
+    init(id: UUID = UUID(),
+         description: String,
+         amount: Double,
+         type: TransactionType,
+         category: TransactionCategory,
+         date: Date,
+         paymentMethod: PaymentMethod,
+         bank: Bank) {
+        self.id = id
+        self.description = description
+        self.amount = amount
+        self.type = type
+        self.category = category
+        self.date = date
+        self.paymentMethod = paymentMethod
+        self.bank = bank
+    }
+}
+
+// Enums moved from AddView to be reusable across the app
+enum TransactionType: String, CaseIterable, Codable {
+    case expense = "Despesa"
+    case income = "Receita"
+}
+
+enum TransactionCategory: String, CaseIterable, Codable {
+    case food = "Alimentação"
+    case transport = "Transporte"
+    case housing = "Moradia"
+    case entertainment = "Lazer"
+    case health = "Saúde"
+    case other = "Outros"
+}
+
+enum PaymentMethod: String, CaseIterable, Codable {
+    case cash = "Dinheiro"
+    case creditCard = "Cartão de Crédito"
+    case debitCard = "Cartão de Débito"
+    case transfer = "Transferência"
+}
+
+enum Bank: String, CaseIterable, Codable, Identifiable {
+    case itau = "Itaú"
+    case bradesco = "Bradesco"
+    case santander = "Santander"
+    case nubank = "Nubank"
+    case other = "Outro"
+    
+    var id: String { self.rawValue }
+}
+
+
+extension Transaction {
+    static var mock: Transaction {
+        Transaction(
+            description: "Supermercado",
+            amount: 150.50,
+            type: .expense,
+            category: .food,
+            date: Date(),
+            paymentMethod: .creditCard,
+            bank: .itau
+        )
+    }
+    
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "pt_BR")
+        return formatter.string(from: date)
+    }
+    
+    var formattedAmount: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "pt_BR")
+        return formatter.string(from: NSNumber(value: amount)) ?? "R$ 0,00"
+    }
+}

@@ -29,11 +29,11 @@ struct ListCategoryRowView: View {
             }
             .padding(.horizontal)
             .padding(.vertical)
-            .background(Color(colorScheme == .dark ? .gray.opacity(0.05) : .white.opacity(0.5)))
+            .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 2)
             )
         }
     }

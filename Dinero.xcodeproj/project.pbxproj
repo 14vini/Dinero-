@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180ECEA02DDD5E470039B06B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180ECE9F2DDD5E470039B06B /* Transaction.swift */; };
 		18254FFA2DCDE4E700C18865 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */; };
 		1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825C52B2DCBEF2300FB653B /* WelcomeView.swift */; };
 		18411CC02DD811FC0024D855 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18411CBF2DD811FC0024D855 /* SettingView.swift */; };
@@ -16,9 +17,6 @@
 		184DC1EE2DD4205B00D82F9E /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC1ED2DD4205B00D82F9E /* ItemsModel.swift */; };
 		184DC1F02DD4253400D82F9E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC1EF2DD4253400D82F9E /* HomeViewModel.swift */; };
 		1855383F2DCA719600DDE774 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855383E2DCA719600DDE774 /* InputView.swift */; };
-		187719972DD4BADF0027881B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187719962DD4BAD30027881B /* PreviewData.swift */; };
-		1877199B2DD4BB480027881B /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877199A2DD4BB480027881B /* TransactionModel.swift */; };
-		1877199D2DD4BC220027881B /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1877199C2DD4BC220027881B /* TransactionRowView.swift */; };
 		18D81C842DCD8F0F005DC9EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D81C832DCD8F0F005DC9EF /* HomeView.swift */; };
 		18F0BDA12DCD2E840056EEC8 /* LocalAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */; };
 		18F2FA992DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F2FA952DC94A6F0052A4ED /* Nunito-VariableFont_wght.ttf */; };
@@ -44,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180ECE9F2DDD5E470039B06B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = SOURCE_ROOT; };
 		18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = SOURCE_ROOT; };
 		1825C52B2DCBEF2300FB653B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		18411CBF2DD811FC0024D855 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -53,9 +52,6 @@
 		184DC1ED2DD4205B00D82F9E /* ItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = SOURCE_ROOT; };
 		184DC1EF2DD4253400D82F9E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		1855383E2DCA719600DDE774 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		187719962DD4BAD30027881B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
-		1877199A2DD4BB480027881B /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = SOURCE_ROOT; };
-		1877199C2DD4BC220027881B /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
 		18D81C832DCD8F0F005DC9EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthView.swift; sourceTree = "<group>"; };
 		18F2FA692DC931380052A4ED /* Dinero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dinero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +137,6 @@
 				18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */,
 				18D81C832DCD8F0F005DC9EF /* HomeView.swift */,
 				184DC1E92DD41D7200D82F9E /* ListCategoryRowView.swift */,
-				1877199C2DD4BC220027881B /* TransactionRowView.swift */,
 				18411CBF2DD811FC0024D855 /* SettingView.swift */,
 				18411CC12DD812330024D855 /* AddView.swift */,
 			);
@@ -152,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				184DC1ED2DD4205B00D82F9E /* ItemsModel.swift */,
-				1877199A2DD4BB480027881B /* TransactionModel.swift */,
+				180ECE9F2DDD5E470039B06B /* Transaction.swift */,
 			);
 			path = "Models ";
 			sourceTree = "<group>";
@@ -178,7 +173,6 @@
 		18F2FA822DC949F80052A4ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				187719962DD4BAD30027881B /* PreviewData.swift */,
 				18F2FA982DC94A6F0052A4ED /* Nunito Font */,
 			);
 			path = Resources;
@@ -313,13 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1877199B2DD4BB480027881B /* TransactionModel.swift in Sources */,
-				1877199D2DD4BC220027881B /* TransactionRowView.swift in Sources */,
 				18411CC02DD811FC0024D855 /* SettingView.swift in Sources */,
 				1855383F2DCA719600DDE774 /* InputView.swift in Sources */,
 				184DC1F02DD4253400D82F9E /* HomeViewModel.swift in Sources */,
+				180ECEA02DDD5E470039B06B /* Transaction.swift in Sources */,
 				18411CC22DD812330024D855 /* AddView.swift in Sources */,
-				187719972DD4BADF0027881B /* PreviewData.swift in Sources */,
 				184DC1EA2DD41D7200D82F9E /* ListCategoryRowView.swift in Sources */,
 				184DC1EE2DD4205B00D82F9E /* ItemsModel.swift in Sources */,
 				1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */,
