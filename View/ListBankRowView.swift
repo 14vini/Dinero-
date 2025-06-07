@@ -1,27 +1,27 @@
 //
-//  ListCategoryRowView.swift
+//  ListBankRowView.swift
 //  Dinero
 //
-//  Created by Vinicius on 5/13/25.
+//  Created by Vinicius on 6/7/25.
 //
 
 import SwiftUI
 
-struct ListCategoryRowView: View {
+struct ListBankRowView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    let category: String
-    let image: String
+    let bank: String
     let value: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             VStack {
                 HStack {
-                    Image(systemName: image)
-                        .foregroundColor(.red)
-                    Text(category)
+                    Image(systemName: "creditcard.fill")
+                        .foregroundColor(.blue)
+                    
+                    Text(bank)
                     Spacer()
                     Text(value)
                         .bold()
@@ -36,11 +36,10 @@ struct ListCategoryRowView: View {
                     .stroke(Color.primary.opacity(0.1), lineWidth: 1)
             )
             .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 1)
-
         }
     }
 }
 
 #Preview {
-    ListCategoryRowView(category: "Compras", image: "basket.fill", value: "R$ 2.454,00")
+    ListBankRowView(bank: "Nubank", value: "R$ 1.234,56")
 }

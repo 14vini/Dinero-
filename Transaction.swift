@@ -36,7 +36,7 @@ struct Transaction: Identifiable, Codable, Hashable {
     }
 }
 
-// Enums moved from AddView to be reusable across the app
+// Enums reutilizáveis em todo o app
 enum TransactionType: String, CaseIterable, Codable {
     case expense = "Despesa"
     case income = "Receita"
@@ -68,7 +68,6 @@ enum Bank: String, CaseIterable, Codable, Identifiable {
     var id: String { self.rawValue }
 }
 
-
 extension Transaction {
     static var mock: Transaction {
         Transaction(
@@ -81,19 +80,27 @@ extension Transaction {
             bank: .itau
         )
     }
-    
-    var formattedDate: String {
+
+    private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: date)
+        return formatter
+    }()
+
+    var formattedDate: String {
+        Self.dateFormatter.string(from: date)
     }
-    
-    var formattedAmount: String {
+
+    private static let amountFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: NSNumber(value: amount)) ?? "R$ 0,00"
+        return formatter
+    }()
+
+    var formattedAmount: String {
+        Self.amountFormatter.string(from: NSNumber(value: amount)) ?? "R$ 0,00"
     }
 }
