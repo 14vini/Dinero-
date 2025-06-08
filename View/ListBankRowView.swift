@@ -30,9 +30,9 @@ struct ListBankRowView: View {
             .padding(.horizontal)
             .padding(.vertical)
             .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 30))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
-                RoundedRectangle(cornerRadius: 30)
+                RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.primary.opacity(0.1), lineWidth: 1)
             )
             .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 1)

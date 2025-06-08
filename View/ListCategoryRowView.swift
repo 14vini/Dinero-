@@ -15,12 +15,32 @@ struct ListCategoryRowView: View {
     let image: String
     let value: String
 
+    // Computed property para retornar uma cor com base na categoria
+    var categoryColor: Color {
+        switch category.lowercased() {
+        case "alimentação", "food":
+            return .green
+        case "transporte", "transport":
+            return .blue
+        case "moradia", "housing":
+            return .orange
+        case "entretenimento", "entertainment":
+            return .purple
+        case "saúde", "health":
+            return .red
+        case "outros", "other":
+            return .gray
+        default:
+            return .accentColor
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             VStack {
                 HStack {
                     Image(systemName: image)
-                        .foregroundColor(.red)
+                        .foregroundColor(categoryColor)
                     Text(category)
                     Spacer()
                     Text(value)
@@ -30,17 +50,16 @@ struct ListCategoryRowView: View {
             .padding(.horizontal)
             .padding(.vertical)
             .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 30))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
-                RoundedRectangle(cornerRadius: 30)
+                RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.primary.opacity(0.1), lineWidth: 1)
             )
-            .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 1)
-
+            .shadow(color: .primary.opacity(0.2), radius: 1.5, x: 0, y: 1)
         }
     }
 }
 
 #Preview {
-    ListCategoryRowView(category: "Compras", image: "basket.fill", value: "R$ 2.454,00")
+    ListCategoryRowView(category: "Food", image: "basket.fill", value: "R$ 2.454,00")
 }

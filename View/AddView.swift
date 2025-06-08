@@ -39,7 +39,7 @@ struct AddView: View {
             ZStack {
                 Color(colorScheme == .dark ? .darkGray.withAlphaComponent(0.2) : .lightGray.withAlphaComponent(0.1))
                     .ignoresSafeArea(edges: .all)
-
+                
                 Form {
                     Section(header: Text("INFORMAÇÃO BÁSICA").font(.headline)) {
                         TextField("Descrição", text: $description)
@@ -108,7 +108,7 @@ struct AddView: View {
                 .sheet(isPresented: $showingAddBankSheet) {
                     addNewBankView
                 }
-            }
+            }.background(.ultraThinMaterial)
         }
     }
 

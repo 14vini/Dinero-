@@ -16,7 +16,7 @@ struct WelcomeView: View {
         NavigationStack{
             
             ZStack{
-                Color.background
+                Color(colorScheme == .dark ? .darkGray.withAlphaComponent(0.2) : .lightGray.withAlphaComponent(0.1))
                     .ignoresSafeArea(edges: .all)
                 
                 VStack{
@@ -24,7 +24,7 @@ struct WelcomeView: View {
                         VStack{
                             
                             Image("logo")
-                                .padding(.bottom)
+                                .padding()
                             
                             Text("Bem-vindo ao")
                                 .font(.title)
@@ -93,17 +93,19 @@ struct WelcomeView: View {
         var body : some View{
             
             VStack{
-                NavigationLink(destination: LocalAuthView() ) {
+                NavigationLink(destination: HomeView() ) {
                     Text(title)
                         .foregroundColor(.primary)
-                        .frame(width: 300, height: 50)
+                        .frame(width: 250, height: 50)
                         .background(.ultraThinMaterial)
-                        .cornerRadius(20)
+                        .cornerRadius(30)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.primary.opacity(0.5), lineWidth: 2)
-                        ).padding(.bottom, 30)
-                }   
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color.primary.opacity(0.2), lineWidth: 1)
+                        )
+                        .shadow(color: .primary.opacity(0.2) , radius: 5, x: 0 ,y: 3)
+                        .padding(.bottom, 30)
+                }
             }
         }
     }
