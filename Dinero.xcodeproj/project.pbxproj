@@ -11,7 +11,6 @@
 		18254FFA2DCDE4E700C18865 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */; };
 		1825C52C2DCBEF2300FB653B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825C52B2DCBEF2300FB653B /* WelcomeView.swift */; };
 		18306DF62DF4D67D00D46B94 /* ListBankRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18306DF52DF4D67D00D46B94 /* ListBankRowView.swift */; };
-		18411CC02DD811FC0024D855 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18411CBF2DD811FC0024D855 /* SettingView.swift */; };
 		18411CC22DD812330024D855 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18411CC12DD812330024D855 /* AddView.swift */; };
 		184DC1EA2DD41D7200D82F9E /* ListCategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC1E92DD41D7200D82F9E /* ListCategoryRowView.swift */; };
 		184DC1EC2DD41F7C00D82F9E /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DC1EB2DD41F7C00D82F9E /* ListViewModel.swift */; };
@@ -47,7 +46,6 @@
 		18254FF92DCDE4E700C18865 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = SOURCE_ROOT; };
 		1825C52B2DCBEF2300FB653B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		18306DF52DF4D67D00D46B94 /* ListBankRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBankRowView.swift; sourceTree = "<group>"; };
-		18411CBF2DD811FC0024D855 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		18411CC12DD812330024D855 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		184DC1E92DD41D7200D82F9E /* ListCategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryRowView.swift; sourceTree = "<group>"; };
 		184DC1EB2DD41F7C00D82F9E /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -139,7 +137,6 @@
 				18F0BDA02DCD2E840056EEC8 /* LocalAuthView.swift */,
 				18D81C832DCD8F0F005DC9EF /* HomeView.swift */,
 				184DC1E92DD41D7200D82F9E /* ListCategoryRowView.swift */,
-				18411CBF2DD811FC0024D855 /* SettingView.swift */,
 				18411CC12DD812330024D855 /* AddView.swift */,
 				18306DF52DF4D67D00D46B94 /* ListBankRowView.swift */,
 			);
@@ -310,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18411CC02DD811FC0024D855 /* SettingView.swift in Sources */,
 				1855383F2DCA719600DDE774 /* InputView.swift in Sources */,
 				184DC1F02DD4253400D82F9E /* HomeViewModel.swift in Sources */,
 				180ECEA02DDD5E470039B06B /* Transaction.swift in Sources */,

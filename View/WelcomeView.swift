@@ -44,7 +44,7 @@ struct WelcomeView: View {
                         VStack(alignment: .leading, spacing: 30) {
                             CardStyle(icon: "sparkles", title: "Simples de usar", description: "Adicione transações de forma fácil.")
                             CardStyle(icon: "square.stack.3d.up.fill", title: "Organização", description: "Gerencie seu dinheiro com uma interface clara e organizada.")
-                            CardStyle(icon: "faceid", title: "Segurança", description: "Seus dados ficam salvos no iPhone com Face ID.")
+                            CardStyle(icon: "shield.lefthalf.filled", title: "Segurança", description: "Seus dados estão protegidos e seguros.")
                         }.padding(10)
                         
                         

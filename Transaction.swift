@@ -39,7 +39,7 @@ struct Transaction: Identifiable, Codable, Hashable {
 // Enums reutilizáveis em todo o app
 enum TransactionType: String, CaseIterable, Codable {
     case expense = "Despesa"
-    case income = "Receita"
+    case income = "Ganho"
 }
 
 enum TransactionCategory: String, CaseIterable, Codable {
@@ -63,8 +63,34 @@ enum Bank: String, CaseIterable, Codable, Identifiable {
     case bradesco = "Bradesco"
     case santander = "Santander"
     case nubank = "Nubank"
+    case bancoDoBrasil = "Banco do Brasil"
+    case caixa = "Caixa Econômica Federal"
+    case inter = "Banco Inter"
+    case original = "Banco Original"
+    case c6 = "C6 Bank"
+    case btg = "BTG Pactual"
+    case neon = "Banco Neon"
+    case pagbank = "PagBank"
+    case next = "Next"
+    case sicredi = "Sicredi"
+    case sicoob = "Sicoob"
+    case banrisul = "Banrisul"
+    case bancoPan = "Banco PAN"
+    case mercantil = "Banco Mercantil"
+    case alfa = "Banco Alfa"
+    case safra = "Banco Safra"
+    case digio = "Digio"
+    case willbank = "Will Bank"
+    case bmg = "Banco BMG"
+    case modal = "ModalMais"
+    case agibank = "Agibank"
+    case bancoTopazio = "Banco Topázio"
+    case bancoRendimento = "Banco Rendimento"
+    case bancoDaycoval = "Banco Daycoval"
+    case bancoVolkswagen = "Banco Volkswagen"
+    case bancoToyota = "Banco Toyota"
     case other = "Outro"
-    
+
     var id: String { self.rawValue }
 }
 

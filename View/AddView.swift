@@ -41,13 +41,12 @@ struct AddView: View {
                     .ignoresSafeArea(edges: .all)
                 
                 Form {
-                    Section(header: Text("INFORMAÇÃO BÁSICA").font(.headline)) {
+                    Section(header: Text("INFORMAÇÃO").font(.caption)) {
                         TextField("Descrição", text: $description)
                             .autocapitalization(.sentences)
 
                         HStack {
-                            Text("R$")
-                            TextField("0,00", text: $amount)
+                            TextField("R$0,00", text: $amount)
                                 .keyboardType(.decimalPad)
                                 .onChange(of: amount) { newValue in
                                     validateAmount(newValue)
@@ -70,7 +69,7 @@ struct AddView: View {
                         DatePicker("Data", selection: $selectedDate, displayedComponents: .date)
                     }
 
-                    Section(header: Text("INFORMAÇÃO ADICIONAL").font(.headline)) {
+                    Section(header: Text("INFORMAÇÃO ADICIONAL").font(.caption)) {
                         Picker("Método de pagamento", selection: $paymentMethod) {
                             ForEach(PaymentMethod.allCases, id: \.self) { method in
                                 Text(method.rawValue).tag(method)

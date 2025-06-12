@@ -16,6 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                
                 Color(colorScheme == .dark ? .darkGray.withAlphaComponent(0.2) : .lightGray.withAlphaComponent(0.1))
                     .ignoresSafeArea(edges: .all)
                 
@@ -36,20 +37,6 @@ struct HomeView: View {
     
     @ToolbarContentBuilder
     private func toolbarContent() -> some ToolbarContent {
-//        ToolbarItem(placement: .navigationBarLeading) {
-//            Menu {
-//                Button("Perfil", action: { print("Perfil") })
-//
-//                Button("Configurações", action: {
-//                    showSettings.toggle()
-//                })
-//
-//                Button("Sair", action: { print("Logout") })
-//
-//            } label: {
-//                ToolbarButton(icon: "line.3.horizontal")
-//            }
-//        }
 
         ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -65,11 +52,11 @@ struct HomeView: View {
 
 extension HomeView {
     var styleData : some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 10) {
            // StatusCard(balance: viewModel.balance, income: viewModel.totalIncome, expenses: viewModel.totalExpenses)
          
             VStack(alignment: .leading, spacing: 10) {
-                Text("Bancos:")
+                Text("Bancos adicionados:")
                     .font(.headline)
                     .foregroundColor(.primary)
                 
@@ -94,70 +81,20 @@ extension HomeView {
             }.padding(.vertical)
         }.padding()
     }
-    struct StatusCard: View {
-        @Environment(\.colorScheme) var colorScheme
-        var balance: Double
-        var income: Double
-        var expenses: Double
-
-        var body: some View {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    VStack {
-                        Image(systemName: "banknote")
-                            .foregroundColor(.red)
-                            .font(.largeTitle)
-                        Spacer()
-                        Text("Status")
-                            .font(.title.bold())
-                    }
-
-                    Spacer()
-
-                    Text(balance.formatCurrency())
-                        .font(.title.bold())
-                }
-
-                Divider()
-
-                HStack {
-                    VStack(alignment: .leading) {
-                        Label("Ganhos", systemImage: "arrow.down")
-                            .foregroundColor(.green)
-                            .font(.headline.bold())
-                        Text(income.formatCurrency())
-                            .font(.headline)
-                    }
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Label("Despesas", systemImage: "arrow.up")
-                            .foregroundColor(.red)
-                            .font(.headline.bold())
-                        Text(expenses.formatCurrency())
-                            .font(.headline)
-                    }
-                }
-                .padding(.vertical, 5)
-            }
-            .padding(30)
-            .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
-            )
-            .shadow(color: .primary.opacity(0.2), radius: 2, x: 0, y: 1)
-        }
-    }
     
     struct ModernStatusCard: View {
         var balance: Double
         var expenses: Double
         
         var body: some View {
+            
             VStack(alignment: .leading, spacing: 16) {
-                Text("BemVindo!")
-                    .font(.title2.bold())
+                
+                VStack{
+                    Text("BemVindo!")
+                        .font(.title2.bold())
+                    
+                }
                 
                 HStack {
                     VStack(alignment: .leading) {
@@ -178,7 +115,7 @@ extension HomeView {
                             .foregroundColor(.blue)
                     }
                 }
-                Divider()
+                
             }
             .padding(30)
         }
@@ -217,7 +154,7 @@ extension HomeView {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.primary.opacity(0.1), lineWidth: 1)
                 )
-                .shadow(color: .primary.opacity(0.2), radius: 1.5 , x: 0, y: 1)
+                .shadow(color: .primary.opacity(0.2), radius: 2 , x: 0, y: 1)
             }
         }
     }
