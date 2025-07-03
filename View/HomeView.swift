@@ -12,7 +12,7 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     @State var showSettings = false
     @State var showAddView = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -26,27 +26,11 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Início")
-            .toolbar(content: toolbarContent)
-            .sheet(isPresented: $showAddView) {
-                AddView(viewModel: viewModel)
-                
-            }
             .navigationBarBackButtonHidden()
         }
     }
-    
-    @ToolbarContentBuilder
-    private func toolbarContent() -> some ToolbarContent {
+}
 
-        ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    showAddView.toggle()
-                } label: {
-                    ToolbarButton(icon: "plus.circle")
-                }
-            }
-        }
-    }
 
 // MARK: - Components
 
@@ -87,37 +71,53 @@ extension HomeView {
         var expenses: Double
         
         var body: some View {
-            
-            VStack(alignment: .leading, spacing: 16) {
+            ZStack {
                 
-                VStack{
-                    Text("BemVindo!")
-                        .font(.title2.bold())
-                    
+                // Background Circles
+                ZStack {
+                    Circle()
+                        .fill(.yellow.opacity(0.9))
+                        .offset(x: 130, y: -80)
+                       
+                    Circle().fill(.blue.opacity(0.9))
+                        .offset(x: -130, y: 80)
                 }
-                
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Saldo total:")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+
+                // Main Content
+                VStack(alignment: .leading, spacing: 20) {
+                    VStack {
                         Text(balance.formatCurrency())
-                            .font(.title2.bold())
-                            .foregroundColor(.green)
-                    }
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text("Despesa Total:")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(.primary)
+                        Text("Saldo total")
                             .font(.caption)
                             .foregroundColor(.secondary)
+                    }
+
+                    VStack {
                         Text(expenses.formatCurrency())
-                            .font(.title2.bold())
-                            .foregroundColor(.blue)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(.red)
+                        Text("Despesa Total")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
-                
             }
-            .padding(30)
+            .frame(maxWidth: 300)
+            .frame(height: 150)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 1.5)
+            )
+            .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 1)
+            .padding()
         }
     }
 
@@ -138,23 +138,22 @@ extension HomeView {
         var banco: String
 
         var body: some View {
-            VStack {
+            ScrollView{
                 HStack {
-                    Image(systemName: "creditcard.fill")
-                        .foregroundColor(.cyan)
-
-                    Text(banco)
-                        .padding()
-                    Spacer()
+                    HStack {
+                        Image(systemName: "creditcard.fill")
+                            .foregroundColor(.cyan)
+                        
+                        Text(banco)
+                            .padding()
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                .padding(.horizontal)
-                .background(.ultraThinMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.primary.opacity(0.1), lineWidth: 1)
-                )
-                .shadow(color: .primary.opacity(0.2), radius: 2 , x: 0, y: 1)
             }
         }
     }

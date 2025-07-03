@@ -93,7 +93,8 @@ struct WelcomeView: View {
         var body : some View{
             
             VStack{
-                NavigationLink(destination: HomeView() ) {
+                NavigationLink(destination:  TabBar(angle: .constant(0))
+                    .environmentObject(ListViewModel()) ) {
                     Text(title)
                         .foregroundColor(.primary)
                         .frame(width: 250, height: 50)
