@@ -129,9 +129,18 @@ class HomeViewModel: ObservableObject {
     }
 
     private func updateBanks() {
-        let uniqueBankNames = Set(transactions.map { $0.bank.rawValue })
-        banks = uniqueBankNames.map { bankName in
-            BankItemModel(bankName: bankName)
+        var bankTotals: [String: Double] = [:]
+        
+        for transaction in transactions {
+            let bankName = transaction.bank.rawValue
+            bankTotals[bankName, default: 0] += transaction.amount
+        }
+        
+        banks = bankTotals.map { bankName, total in
+            BankItemModel(
+                bankName: bankName,
+                bankValue: formatCurrency(total)
+            )
         }
     }
 

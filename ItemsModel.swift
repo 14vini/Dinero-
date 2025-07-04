@@ -13,7 +13,7 @@ struct CategoryItemModel: Identifiable, Codable {
     var id: String
     let category: String
     let image: String
-    let value: String
+    var value: String
     
     init(id: String = UUID().uuidString , category: String, image: String, value: String){
         self.id = UUID().uuidString
@@ -30,17 +30,17 @@ struct CategoryItemModel: Identifiable, Codable {
 }
 
 struct BankItemModel: Identifiable, Codable {
-    
     var id: String
     let bankName: String
+    var bankValue: String
     
-    init(id: String = UUID().uuidString , bankName: String){
+    init(id: String = UUID().uuidString, bankName: String, bankValue: String) {
         self.id = id
         self.bankName = bankName
-        
+        self.bankValue = bankValue
     }
     
     func updateComptetion() -> BankItemModel {
-        return BankItemModel(id: id, bankName: bankName)
+        return BankItemModel(id: id, bankName: bankName, bankValue: bankValue)
     }
 }

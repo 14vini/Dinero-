@@ -17,20 +17,33 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 
-                Color(colorScheme == .dark ? .darkGray.withAlphaComponent(0.2) : .lightGray.withAlphaComponent(0.1))
-                    .ignoresSafeArea(edges: .all)
-                
                 ScrollView {
                     ModernStatusCard(balance: viewModel.balance, expenses: viewModel.totalExpenses)
                     styleData
                 }
             }
             .navigationTitle("Início")
+            .toolbar(content: toolbarContent)
+            .sheet(isPresented: $showAddView) {
+                AddView(viewModel: viewModel)
+                
+            }
             .navigationBarBackButtonHidden()
         }
     }
-}
+    
+    @ToolbarContentBuilder
+    private func toolbarContent() -> some ToolbarContent {
 
+        ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showAddView.toggle()
+                } label: {
+                    ToolbarButton(icon: "plus.circle")
+                }
+            }
+        }
+    }
 
 // MARK: - Components
 
@@ -45,7 +58,7 @@ extension HomeView {
                     .foregroundColor(.primary)
                 
                 ForEach(viewModel.banks) { bank in
-                    BankCard(banco: bank.bankName)
+                    ListBankRowView(bank: bank.bankName, value: bank.bankValue)
                 }
             }
             .padding(.vertical)
@@ -62,6 +75,7 @@ extension HomeView {
                         value: category.value
                     )
                 }.onDelete(perform: viewModel.removeCategory)
+                
             }.padding(.vertical)
         }.padding()
     }
@@ -87,7 +101,7 @@ extension HomeView {
                 VStack(alignment: .leading, spacing: 20) {
                     VStack {
                         Text(balance.formatCurrency())
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.bold)
                             .fontDesign(.rounded)
                             .foregroundColor(.primary)
@@ -98,7 +112,7 @@ extension HomeView {
 
                     VStack {
                         Text(expenses.formatCurrency())
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.bold)
                             .fontDesign(.rounded)
                             .foregroundColor(.red)
@@ -110,7 +124,7 @@ extension HomeView {
             }
             .frame(maxWidth: 300)
             .frame(height: 150)
-            .background(.ultraThinMaterial)
+            .background(.green.opacity(1))
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
@@ -130,31 +144,6 @@ extension HomeView {
                 .font(.title3)
                 .padding(.vertical)
                 
-        }
-    }
-
-    struct BankCard: View {
-        @Environment(\.colorScheme) var colorScheme
-        var banco: String
-
-        var body: some View {
-            ScrollView{
-                HStack {
-                    HStack {
-                        Image(systemName: "creditcard.fill")
-                            .foregroundColor(.cyan)
-                        
-                        Text(banco)
-                            .padding()
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 60)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                }
-            }
         }
     }
 }

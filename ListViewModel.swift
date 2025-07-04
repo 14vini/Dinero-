@@ -35,8 +35,8 @@ class ListViewModel: ObservableObject {
         ].map { UnifiedItemModel.category($0) }
 
         let bankItems = [
-            BankItemModel(bankName: "Nubank"),
-            BankItemModel(bankName: "Banco do Brasil")
+            BankItemModel(bankName: "Nubank", bankValue: "1200"),
+            BankItemModel(bankName: "Banco do Brasil", bankValue: "1200")
         ].map { UnifiedItemModel.bank($0) }
 
         self.items = categoryItems + bankItems
