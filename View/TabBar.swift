@@ -72,10 +72,11 @@ extension TabBar {
     func tabButton(icon: String, selectedIcon: String, index: Int) -> some View {
         Button(action: {
             selectedTab = index
+            viewModel.feedbackHapitcs()
         }) {
             Image(systemName: selectedTab == index ? selectedIcon : icon)
                 .font(.system(size: 25))
-                .foregroundColor(selectedTab == index ? .blue : .gray)
+                .foregroundColor(selectedTab == index ? .cyan : .gray)
             
         }
     }

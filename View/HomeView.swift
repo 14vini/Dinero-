@@ -23,10 +23,12 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Início")
+            .navigationBarTitleDisplayMode(.automatic)
             .toolbar(content: toolbarContent)
             .sheet(isPresented: $showAddView) {
                 AddView(viewModel: viewModel)
-                
+                    .presentationDetents([.medium, .large])
+                    .presentationCornerRadius(40)
             }
             .navigationBarBackButtonHidden()
         }
@@ -38,6 +40,7 @@ struct HomeView: View {
         ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     showAddView.toggle()
+                    viewModel.feedbackHapitcs()
                 } label: {
                     ToolbarButton(icon: "plus.circle")
                 }
@@ -95,7 +98,7 @@ extension HomeView {
                        
                     Circle().fill(.blue.opacity(0.9))
                         .offset(x: -130, y: 80)
-                }
+                }.blur(radius: 20)
 
                 // Main Content
                 VStack(alignment: .leading, spacing: 20) {
@@ -124,13 +127,7 @@ extension HomeView {
             }
             .frame(maxWidth: 300)
             .frame(height: 150)
-            .background(.green.opacity(1))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1.5)
-            )
-            .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 1)
+            .glass(radius: 20)
             .padding()
         }
     }

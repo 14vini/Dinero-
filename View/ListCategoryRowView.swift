@@ -52,11 +52,6 @@ struct ListCategoryRowView: View {
             .frame(height: 60)
             .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1.5)
-            )
-            .shadow(color: .primary.opacity(0.2), radius: 3, x: 0, y: 0)
 
         }
     }

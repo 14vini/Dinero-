@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeViewModel: ObservableObject {
     @Published var transactions: [Transaction] = [] {
@@ -164,5 +165,10 @@ class HomeViewModel: ObservableObject {
     
     private func calculateTotals() {
         // Aqui você pode recalcular alguma métrica se necessário
+    }
+    
+    func feedbackHapitcs() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
     }
 }
